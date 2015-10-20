@@ -1,0 +1,7 @@
+<label>Name: {{input value=model.name}}</label>
+<label>DM?: {{input type="checkbox" checked=model.dm}}</label>
+<div>
+  <button id="createButton" {{action "saveUser"}}>Save User</button>
+  <button id="deleteButton" {{action "deleteUser"}}>Delete User</button>
+</div>
+Back to {{#link-to "users"}}Users {{/link-to}}
