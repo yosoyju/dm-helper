@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
     saveUser() {
       var self = this,
           user = this.get("model");
-      if (!this.get("user.name").trim()) {
+      if (!user.get("name").trim()) {
         return;
       }
 
