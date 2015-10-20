@@ -4,11 +4,15 @@ export default Ember.Controller.extend({
 
   actions: {
     saveUser() {
-      if (!this.get("model.name").trim()) {
+      var self = this,
+          user = this.get("model");
+      if (!this.get("user.name").trim()) {
         return;
       }
 
-      this.get("model").save();
+      user.save().then( function () {
+        self.transitionToRoute("users");
+      });
     },
     deleteUser() {
       var self = this,
