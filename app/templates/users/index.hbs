@@ -1,23 +1,24 @@
 <h1>Users</h1>
 <div>
-    <table>
-        {{#each model as |user|}}
-          <tr>
-            <td>
-              {{#link-to "users.edit" user.id}}{{user.name}}{{/link-to}}
-            </td>
-            <td>
-              {{#if user.dm}}
-              DM
-              {{/if}}
-            </td>
-            <td>
-            <button{{action "delete"}}>Delete</button>
-            </td>
-          </tr>
-        {{/each}}
-    </table>
+  <table>
+    {{#each model as |user|}}
+    <tr>
+      <td>
+        {{#link-to "users.edit" user.id}}{{user.name}}{{/link-to}}
+      </td>
+      <td>
+        {{#if user.dm}}
+        DM
+        {{/if}}
+      </td>
+      <td>
+      <button{{action "edit" user.id}}>Edit</button>
+      <button{{action "delete" user.id}}>Delete</button>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
 </div>
 <div>
-    {{#link-to "users.new"}}New{{/link-to}} User
+  {{#link-to "users.new"}}New{{/link-to}} User
 </div>

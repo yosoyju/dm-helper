@@ -6,8 +6,7 @@ export default Ember.Controller.extend({
 
   actions: {
     createUser() {
-      var self = this,
-          name = this.get("name"),
+      var name = this.get("name"),
           dm = this.get("dm");
       if (!name.trim()) {
         return;
@@ -21,8 +20,8 @@ export default Ember.Controller.extend({
       this.set("name", "");
       this.set("dm", false);
 
-      user.save().then(function () {
-        self.transitionToRoute("users.edit", user.id);
+      user.save().then(() => {
+        this.transitionToRoute("users");
       });
     }
   }
