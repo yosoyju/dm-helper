@@ -1,0 +1,8 @@
+<label>Name: {{input value=model.name}}</label>
+<label>Level: {{input type="number" value=model.level }}</label>
+<label>Name: {{input value=model.location}}</label>
+<div>
+  <button id="createButton" {{action "saveNpc"}}>Save NPC</button>
+  <button id="deleteButton" {{action "deleteNpc"}}>Delete NPC</button>
+</div>
+Back to {{#link-to "npcs"}}NPCs {{/link-to}}

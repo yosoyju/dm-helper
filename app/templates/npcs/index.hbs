@@ -1,1 +1,25 @@
-{{outlet}}
+<h1>NPCs</h1>
+<div>
+  <table>
+    {{#each model as |npc|}}
+    <tr>
+      <td>
+        {{#link-to "npcs.edit" npc.id}}{{npc.name}}{{/link-to}}
+      </td>
+      <td>
+        {{npc.level}}
+      </td>
+      <td>
+        {{npc.location}}
+      </td>
+      <td>
+      <button{{action "edit" npc.id}}>Edit</button>
+      <button{{action "delete" npc.id}}>Delete</button>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</div>
+<div>
+  {{#link-to "npcs.new"}}New{{/link-to}} NPC
+</div>

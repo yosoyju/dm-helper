@@ -5,13 +5,3 @@
 </div>
 
 Back to {{#link-to "users"}}Users{{/link-to}}
-
-<ul>
-{{#each model as |user|}}
-  <li>{{user.name}}
-  {{#if user.dm}}
-  - DM
-  {{/if}}
-  </li>
-{{/each}}
-</ul>

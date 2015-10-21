@@ -19,6 +19,9 @@ Router.map(function() {
 
   this.route("npcs", function () {
     this.route("new");
+    this.route("edit", {
+      path: "/edit/:npc_id"
+    });
   });
 
   this.route("monsters", function () {
