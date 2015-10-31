@@ -1,0 +1,15 @@
+<label>User 
+    <select>
+        {{#each users}}
+            <option value="{{userID}}">{{name}}</option>
+        {{/each}}
+    </select>
+</label>
+<label>Name: {{input value=model.name}}</label>
+<label>Level: {{input type="number" min=1 max=20 value=model.level }}</label>
+
+<div>
+  <button id="createButton" {{action "saveCharacter"}}>Save Character</button>
+  <button id="deleteButton" {{action "deleteCharacter"}}>Delete Character</button>
+</div>
+Back to {{#link-to "characters"}}Characters {{/link-to}}

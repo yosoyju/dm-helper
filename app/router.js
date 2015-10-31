@@ -15,6 +15,9 @@ Router.map(function() {
 
   this.route("characters", function () {
     this.route("new");
+    this.route("edit" , {
+      path: "/edit/:player-character_id"
+    });
   });
 
   this.route("npcs", function () {

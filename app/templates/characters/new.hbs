@@ -6,3 +6,9 @@
     </select>
 </label>
 <label>Name: {{input value=name}}</label>
+<label>Level: {{input type="number" min=1 max=20 value=level }}</label>
+<div>
+  <button id="createButton" {{action "createCharacter"}}>Create Character</button>
+</div>
+
+Back to {{#link-to "characters"}}Characters{{/link-to}}
