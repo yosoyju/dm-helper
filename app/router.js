@@ -20,7 +20,7 @@ Router.map(function() {
   this.route("npcs", function () {
     this.route("new");
     this.route("edit", {
-      path: "/edit/:npc_id"
+      path: "/edit/:non-player-character_id"
     });
   });
 
