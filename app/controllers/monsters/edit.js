@@ -3,23 +3,23 @@ import Ember from "ember";
 export default Ember.Controller.extend({
 
   actions: {
-    saveUser() {
+    saveMonster() {
       var self = this,
-          user = this.get("model");
-      if (!user.get("name").trim()) {
+          mosnter = this.get("model");
+      if (!mosnter.get("name").trim()) {
         return;
       }
 
-      user.save().then( function () {
-        self.transitionToRoute("users");
+      mosnter.save().then( function () {
+        self.transitionToRoute("mosnters");
       });
     },
-    deleteUser() {
+    deleteMonster() {
       var self = this,
-          user = this.get("model");
-      user.deleteRecord();
-      user.save().then(function () {
-        self.transitionToRoute("users");
+          mosnter = this.get("model");
+      mosnter.deleteRecord();
+      mosnter.save().then(function () {
+        self.transitionToRoute("mosnters");
       });
     }
   }

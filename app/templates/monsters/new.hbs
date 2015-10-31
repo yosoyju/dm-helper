@@ -1,2 +1,8 @@
 <label>Name: {{input value=name}}</label>
 <label>Type: {{input value=type}}</label>
+<label>CR: {{input value=challengeRating}}</label>
+<div>
+	<button id="createButton" {{action "createMonster"}}>Create Monster</button>
+</div>
+
+Back to {{#link-to "monsters"}}Monsters{{/link-to}}

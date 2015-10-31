@@ -29,10 +29,16 @@ Router.map(function() {
 
   this.route("monsters", function () {
     this.route("new");
+    this.route("edit", {
+      path: "/edit/:monster_id"
+    });
   });
 
   this.route("encounters", function () {
     this.route("new");
+    this.route("edit", {
+      path: "/edit/:encounter_id"
+    });
   });
 });
 

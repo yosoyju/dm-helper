@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       user.save();
     },
     edit(id) {
-      this.transitionToRoute("users.edit", id);
+      this.transitionToRoute("monsters.edit", id);
     }
   }
 });
