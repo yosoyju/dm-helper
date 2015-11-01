@@ -3,7 +3,7 @@
   <table>
     {{#each model as |character|}}
     <tr>
-      <td>{{character.player}}</td>
+      <td>{{character.player.name}}</td>
       <td>
         {{#link-to "characters.edit" character.id}}{{character.name}}{{/link-to}}
       </td>
