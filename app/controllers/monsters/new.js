@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
   challengeRating: 0,
   treasure: [],
   type: "",
-  actions: [],
+  attackActions: [],
   attributes: [],
 
   actions: {
