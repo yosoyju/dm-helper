@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
       }
       character.set("player", user);
       character.save().then( function (data) {
-        var obj = user.get("characters").map(function (v, i) {
+        var obj = user.get("characters").find(function (v, i) {
           return v.get("id") === data.id;
         });
         if (!obj) {
@@ -32,6 +32,7 @@ export default Ember.Controller.extend({
         user = character.get("player");
       if (user) {
         user.get("characters").removeObject(character);
+        user.save();
       }
       character.deleteRecord();
       character.save().then(function () {
