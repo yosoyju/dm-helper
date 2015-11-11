@@ -1,9 +1,12 @@
-<label>User 
-    <select>
-        {{#each users}}
-            <option value="{{userID}}">{{name}}</option>
-        {{/each}}
-    </select>
+<label>User
+  {{#x-select value=model.player.id class="user-select"}}
+  <option>Select a User</option>
+  {{#each users as |user|}}
+    {{#x-option value=user.id}}
+      {{user.name}}
+    {{/x-option}}
+  {{/each}}
+  {{/x-select}}
 </label>
 <label>Name: {{input value=name}}</label>
 <label>Level: {{input type="number" min=1 max=20 value=level }}</label>

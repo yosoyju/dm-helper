@@ -1,8 +1,9 @@
 <label>User
   {{#x-select value=model.player.id class="user-select"}}
-  {{#each users}}
-    {{#x-option value=id}}
-      {{name}}
+  <option>Select a User</option>
+  {{#each users as |user|}}
+    {{#x-option value=user.id}}
+      {{user.name}}
     {{/x-option}}
   {{/each}}
   {{/x-select}}

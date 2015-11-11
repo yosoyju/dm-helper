@@ -10,7 +10,10 @@ export default Ember.Controller.extend({
 
   actions: {
     createCharacter() {
-      var player = this.get("player"),
+      var self = this,
+          user = this.get("users").find(function (v, i) {
+           return v.id === Ember.$(".user-select").val();
+          }),
           name = this.get("name"),
           level = this.get("level");
       if (!name.trim()) {
@@ -18,7 +21,7 @@ export default Ember.Controller.extend({
       }
 
       var character = this.store.createRecord("player-character", {
-        player: player,
+        player: user,
         name: name,
         level: level
       });
@@ -27,9 +30,20 @@ export default Ember.Controller.extend({
       this.set("name", "");
       this.set("level", 1);
 
-      character.save().then(() => {
-        this.transitionToRoute("characters");
+      character.save().then( function (data) {
+        var obj = user.get("characters").map(function (v, i) {
+          return v.get("id") === data.id;
+        });
+        if (!obj) {
+          user.get("characters").pushObject(data);
+        }
+        user.save().then(function () {
+          self.transitionToRoute("characters");
+        });
       });
+      // character.save().then(() => {
+      //   this.transitionToRoute("characters");
+      // });
     }
   }
 });
