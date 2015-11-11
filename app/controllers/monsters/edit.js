@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       }
 
       mosnter.save().then( function () {
-        self.transitionToRoute("mosnters");
+        self.transitionToRoute("monsters");
       });
     },
     deleteMonster() {
@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
           mosnter = this.get("model");
       mosnter.deleteRecord();
       mosnter.save().then(function () {
-        self.transitionToRoute("mosnters");
+        self.transitionToRoute("monsters");
       });
     }
   }
