@@ -15,18 +15,30 @@ Router.map(function() {
 
   this.route("characters", function () {
     this.route("new");
+    this.route("edit" , {
+      path: "/edit/:player-character_id"
+    });
   });
 
   this.route("npcs", function () {
     this.route("new");
+    this.route("edit", {
+      path: "/edit/:non-player-character_id"
+    });
   });
 
   this.route("monsters", function () {
     this.route("new");
+    this.route("edit", {
+      path: "/edit/:monster_id"
+    });
   });
 
   this.route("encounters", function () {
     this.route("new");
+    this.route("edit", {
+      path: "/edit/:encounter_id"
+    });
   });
 });
 

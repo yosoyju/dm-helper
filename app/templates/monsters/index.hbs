@@ -1,1 +1,21 @@
-{{outlet}}
+<h1>Monsters</h1>
+<div>
+  <table>
+    {{#each model as |monster|}}
+    <tr>
+      <td>
+        {{#link-to "monsters.edit" monster.id}}{{monster.name}}{{/link-to}}
+      </td>
+      <td>{{monster.type}}</td>
+      <td>{{monster.challengeRating}}</td>
+      <td>
+      <button{{action "edit" monster.id}}>Edit</button>
+      <button{{action "delete" monster.id}}>Delete</button>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</div>
+<div>
+  {{#link-to "monsters.new"}}New{{/link-to}} Monster
+</div>

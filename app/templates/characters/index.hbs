@@ -1,1 +1,21 @@
-{{outlet}}
+<h1>Characters</h1>
+<div>
+  <table>
+    {{#each model as |character|}}
+    <tr>
+      <td>{{character.player.name}}</td>
+      <td>
+        {{#link-to "characters.edit" character.id}}{{character.name}}{{/link-to}}
+      </td>
+      <td>{{character.level}}</td>
+      <td>
+      <button{{action "edit" character.id}}>Edit</button>
+      <button{{action "delete" character.id}}>Delete</button>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</div>
+<div>
+  {{#link-to "characters.new"}}New{{/link-to}} Character
+</div>

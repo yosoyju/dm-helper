@@ -1,0 +1,9 @@
+<label>Name: {{input value=model.name}}</label>
+<label>Type: {{input value=model.type}}</label>
+<label>CR: {{input value=model.challengeRating}}</label>
+
+<div>
+  <button id="createButton" {{action "saveMonster"}}>Save Monster</button>
+  <button id="deleteButton" {{action "deleteMonster"}}>Delete Monster</button>
+</div>
+Back to {{#link-to "monsters"}}Monsters {{/link-to}}

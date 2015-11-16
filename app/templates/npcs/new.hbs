@@ -1,2 +1,8 @@
 <label>Name: {{input value=name}}</label>
+<label>Level: {{input type="number" min=1 max=20 value=level }}</label>
 <label>Location: {{input value=location}}</label>
+<div>
+  <button id="createButton" {{action "createNpc"}}>Create NPC</button>
+</div>
+
+Back to {{#link-to "npcs"}}NPCs{{/link-to}}
